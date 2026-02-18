@@ -23,7 +23,7 @@ function App() {
           return (
             <div key={movie.tmdb_id}>
               <h3>{movie.titulo}</h3>
-              <img src={movie.poster_link}/>
+              <img src={movie.poster_link} alt={movie.titulo}/>
             </div>
           )
         })
