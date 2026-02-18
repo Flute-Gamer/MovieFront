@@ -31,6 +31,9 @@ function App() {
           )
         })
       }
+      <footer>
+        <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+    </footer>
     </div>
   );
 }
