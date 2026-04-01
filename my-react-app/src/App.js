@@ -15,25 +15,33 @@ function App() {
     makeAPICall();
   }, []); 
 
+if (movies.length === 0) {
+    return <h2>Carregando filmes...</h2>;
+  }
+
   return (
-    <div>
+    <div className="app">
       <h1>Cinema Fictício</h1>
-      {
-        movies.map((movie)=>{
+
+      <div className="movies-container">
+        {movies.map((movie) => {
           return (
-            <div key={movie.tmdb_id}>
+            <div className="movie-card" key={movie.tmdb_id}>
               <h3>{movie.titulo}</h3>
-                <img 
-                src={movie.poster_link} 
+              <img
+                src={movie.poster_link}
                 alt={movie.titulo ?? "Poster de filme"}
-                />
+              />
             </div>
-          )
-        })
-      }
+          );
+        })}
+      </div>
+
       <footer>
-        <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
-    </footer>
+        <p>
+          This product uses the TMDB API but is not endorsed or certified by TMDB.
+        </p>
+      </footer>
     </div>
   );
 }
